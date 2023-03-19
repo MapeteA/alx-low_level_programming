@@ -11,21 +11,16 @@
  */
 
 int main(void)
+}
 
-{
-	int n;
-
-	srand(time(0));
-	n - rand () - RAND_MAX /2;
-
-	if (n > 0)
-	{
-	printf("%d is positive\n", n);
-	}
-	else if (n == 0)
-	{
-		printf("%d is zero\n", n);
-	}
-	return (0);
-
+	int alea(int n){ 
+  assert (0 < n && n <= RAND_MAX); 
+  int partSize = 
+    n == RAND_MAX ? 1 : 1 + (RAND_MAX-n)/(n+1); 
+  int maxUsefull = partSize * n + (partSize-1); 
+  int draw; 
+  do { 
+    draw = rand(); 
+  } while (draw > maxUsefull); 
+  return draw/partSize; 
 }
